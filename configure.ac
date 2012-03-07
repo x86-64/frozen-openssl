@@ -15,6 +15,7 @@ AC_FUNC_MALLOC
 
 AC_CHECK_HEADERS([openssl/evp.h],[],[AC_MSG_ERROR([OpenSSL headers required])])
 AC_CHECK_LIB([ssl],[SSL_library_init], [], [AC_MSG_ERROR([OpenSSL library required])])
+AC_CHECK_LIB([crypto],[EVP_DigestFinal_ex], [], [AC_MSG_ERROR([OpenSSL library required])])
 
 AC_CHECK_LIB(frozen, frozen_init, [FROZEN=1], [FROZEN=0])
 AM_CONDITIONAL([HAVE_FROZEN], [test "$FROZEN" = 1])
