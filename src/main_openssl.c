@@ -23,6 +23,7 @@ hash_md5_t *        hash_md5_t_alloc(data_t *data){ // {{{
 } // }}}
 void                hash_md5_t_destroy(hash_md5_t *hash_md5){ // {{{
 	data_free(&hash_md5->freeit);
+	free(hash_md5);
 } // }}}
 
 ssize_t             hash_md5_t_update_iot(data_t *data, EVP_MD_CTX *mdctx, fastcall_write *fargs){ // {{{
