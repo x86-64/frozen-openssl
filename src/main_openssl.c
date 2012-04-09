@@ -78,7 +78,7 @@ static ssize_t data_hash_md5_t_convert_to(data_t *src, fastcall_convert_to *farg
 	
 	switch(fargs->format){
 		case FORMAT(packed):;
-			fastcall_write r_packed_write = { { 5, ACTION_WRITE }, 0, &fdata->md_bin, sizeof(fdata->md_bin) };
+			fastcall_write r_packed_write = { { 5, ACTION_WRITE }, 0, &fdata->md_bin, MD5_HASH_SIZE };
 			ret        = data_query(fargs->dest, &r_packed_write);
 			transfered = r_packed_write.buffer_size;
 			break;
