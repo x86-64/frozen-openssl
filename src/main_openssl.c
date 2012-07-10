@@ -86,7 +86,7 @@ static ssize_t data_hash_md5_t_convert_to(data_t *src, fastcall_convert_to *farg
 		case FORMAT(human):;
 		case FORMAT(config):;
 		case FORMAT(native):;
-			fastcall_write r_human_write = { { 5, ACTION_WRITE }, 0, &fdata->md_str, sizeof(fdata->md_str) };
+			fastcall_write r_human_write = { { 5, ACTION_WRITE }, 0, &fdata->md_str, MD5_HASH_SIZE * 2 };
 			ret        = data_query(fargs->dest, &r_human_write);
 			transfered = r_human_write.buffer_size;
 			break;
